@@ -1,0 +1,48 @@
+<div> 
+<div class="container">
+    <h1>Hero Form</h1>
+    <form>
+      <div class="form-group">
+        <label for="fname">First Name</label>
+        <input type="text" class="form-control" name="fname" [(ngModel)]="userForm.fname">
+      </div>    
+      <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input type="text" class="form-control" [(ngModel)]="userForm.lname" name="lname">
+      </div>
+      <div class="form-group">
+        <label for="bday">Role</label>
+          <select class="form-control" [(ngModel)]="userForm.role" name="role">
+            <option>Admin</option>
+            <option>User</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <input type="radio" class="form-control" [(ngModel)]="userForm.gender.male" name="male" (click)="bindRadioValue(female)"> Male
+        <input type="radio" class="form-control" [(ngModel)]="userForm.gender.female" name="female" (click)="bindRadioValue(male)"> Female
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="enmail" class="form-control" [(ngModel)]="userForm.email" name="email">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" class="form-control" [(ngModel)]="userForm.phone" name="phone">
+      </div>
+      <div class="form-group">
+        <label for="sub">Subject</label>
+        <select class="form-control" [(ngModel)]="userForm.subject" name="subject">
+          <option>Patient</option>
+          <option>Doctor</option>
+          <option>Staff</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-success" (click)="submitUserForm()">{{isFormSubmittedOnce ? 'Update' : 'Create'}}</button>
+
+    </form>
+</div>
+
+</div>
+<router-outlet></router-outlet>
